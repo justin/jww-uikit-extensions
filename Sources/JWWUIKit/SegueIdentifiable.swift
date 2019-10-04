@@ -1,9 +1,3 @@
-//
-//  SegueIdentifiable.swift
-//
-//  Created by Justin Williams on 7/31/19.
-//
-
 import UIKit
 
 /// Protocol that declares that a view controller supports storyboard segues.
