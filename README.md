@@ -11,4 +11,4 @@ A set of extensions and types I tend to write for every project I work on.
 
 ## License
 
-Copyright 2019 Justin Williams. Licensed under the MIT license.
+Copyright 2020 Justin Williams. Licensed under the MIT license.
