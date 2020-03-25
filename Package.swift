@@ -10,7 +10,7 @@ let package = Package(
         .tvOS(.v12),
     ],
     products: [
-        .library(name: "JWWUIKit", targets: ["JWWUIKit"]),
+        .library(name: "JWWUIKit", type: .dynamic, targets: ["JWWUIKit"])
     ],
     dependencies: [ ],
     targets: [
