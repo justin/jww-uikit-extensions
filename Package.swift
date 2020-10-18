@@ -1,16 +1,16 @@
-// swift-tools-version:5.1
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version:5.3
 
 import PackageDescription
 
 let package = Package(
     name: "JWWUIKit",
     platforms: [
-        .iOS(.v12),
-        .tvOS(.v12),
+        .iOS(.v13),
+        .tvOS(.v13),
     ],
     products: [
-        .library(name: "JWWUIKit", type: .dynamic, targets: ["JWWUIKit"])
+        .library(name: "JWWUIKit", targets: ["JWWUIKit"]),
+        .library(name: "JWWUIKitDynamic", targets: ["JWWUIKit"])
     ],
     dependencies: [ ],
     targets: [
