@@ -6,7 +6,7 @@ let package = Package(
     name: "JWWUIKit",
     platforms: [
         .iOS(.v13),
-        .tvOS(.v13),
+        .tvOS(.v13)
     ],
     products: [
         .library(name: "JWWUIKit", targets: ["JWWUIKit"]),
@@ -15,6 +15,6 @@ let package = Package(
     dependencies: [ ],
     targets: [
         .target(name: "JWWUIKit", dependencies: []),
-        .testTarget(name: "JWWUIKit-Tests", dependencies: ["JWWUIKit"]),
+        .testTarget(name: "JWWUIKit-Tests", dependencies: ["JWWUIKit"])
     ]
 )
