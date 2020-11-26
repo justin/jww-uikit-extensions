@@ -14,7 +14,11 @@ let package = Package(
     ],
     dependencies: [ ],
     targets: [
-        .target(name: "JWWUIKit", dependencies: []),
+        .target(name: "JWWUIKit", dependencies: [],
+            linkerSettings: [
+                .linkedFramework("UIKit", .when(platforms: [.iOS, .tvOS]))
+            ]
+        ),
         .testTarget(name: "JWWUIKit-Tests", dependencies: ["JWWUIKit"])
     ]
 )
