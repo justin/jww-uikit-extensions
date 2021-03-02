@@ -9,8 +9,8 @@ let package = Package(
         .tvOS(.v13)
     ],
     products: [
-        .library(name: "JWWUIKit", targets: ["JWWUIKit"]),
-        .library(name: "JWWUIKitDynamic", targets: ["JWWUIKit"])
+        .library(name: "JWWUIKit", type: .static, targets: ["JWWUIKit"]),
+        .library(name: "JWWUIKitDynamic", type: .dynamic, targets: ["JWWUIKit"])
     ],
     dependencies: [ ],
     targets: [
