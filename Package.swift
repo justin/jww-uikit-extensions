@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.4
 
 import PackageDescription
 
@@ -9,12 +9,21 @@ let package = Package(
         .tvOS(.v13)
     ],
     products: [
-        .library(name: "JWWUIKit", type: .static, targets: ["JWWUIKit"]),
-        .library(name: "JWWUIKitDynamic", type: .dynamic, targets: ["JWWUIKit"])
+        .library(name: "JWWUIKit", targets: ["JWWUIKit"]),
     ],
     dependencies: [ ],
     targets: [
-        .target(name: "JWWUIKit", dependencies: []),
-        .testTarget(name: "JWWUIKit-Tests", dependencies: ["JWWUIKit"])
+        .target(name: "JWWUIKit",
+                linkerSettings: [
+                    .linkedFramework("UIKit"),
+                    .linkedFramework("Combine")
+                ]),
+        .testTarget(name: "JWWUIKit-Tests",
+                    dependencies: ["JWWUIKit"],
+                    linkerSettings: [
+                        .linkedFramework("XCTest"),
+                        .linkedFramework("Combine")
+                    ]
+        )
     ]
 )
