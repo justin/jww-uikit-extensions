@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  linter: 
+  lint:
     name: Linting
     runs-on: ubuntu-latest
     steps:
@@ -17,22 +17,23 @@ jobs:
       - name: SwiftLint
         uses: norio-nomura/action-swiftlint@3.2.1
 
-  iOS:
-    name: Build and Test.
+  test:
+    name: "Unit Tests"
     runs-on: macos-11
     env:
-      DEVELOPER_DIR: '/Applications/Xcode_12.5.app/Contents/Developer'
       XCODE_SCHEME: "JWWUIKit"
+      DEVELOPER_DIR: "/Applications/Xcode_13.1.app/Contents/Developer"
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: Build and Test (iOS)
-        run: | 
-          set -o pipefail && env NSUnbufferedIO=YES 
-          xcodebuild build-for-testing -scheme $XCODE_SCHEME -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
+        run: |
+          set -o pipefail && env NSUnbufferedIO=YES
+          xcodebuild build-for-testing -usePackageSupportBuiltinSCM -scheme "$XCODE_SCHEME" -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
 
       - name: Build and Test (tvOS)
-        run: | 
-          set -o pipefail && env NSUnbufferedIO=YES 
-          xcodebuild build-for-testing -scheme $XCODE_SCHEME -destination "platform=tvOS Simulator,OS=latest,name=Apple TV 4K" | xcpretty
+        run: |
+          set -o pipefail && env NSUnbufferedIO=YES
+          xcodebuild build-for-testing -usePackageSupportBuiltinSCM -scheme "$XCODE_SCHEME" -destination "platform=tvOS Simulator,OS=latest,name=Apple TV 4K" | xcpretty
