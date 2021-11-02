@@ -5,8 +5,8 @@ import PackageDescription
 let package = Package(
     name: "JWWUIKit",
     platforms: [
-        .iOS(.v13),
-        .tvOS(.v13)
+        .iOS(.v14),
+        .tvOS(.v14)
     ],
     products: [
         .library(name: "JWWUIKit", targets: ["JWWUIKit"]),
