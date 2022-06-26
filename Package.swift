@@ -1,4 +1,4 @@
-// swift-tools-version:5.4
+// swift-tools-version:5.5
 
 import PackageDescription
 
@@ -6,10 +6,10 @@ let package = Package(
     name: "JWWUIKit",
     platforms: [
         .iOS(.v14),
-        .tvOS(.v14)
+        .macCatalyst(.v14)
     ],
     products: [
-        .library(name: "JWWUIKit", targets: ["JWWUIKit"]),
+        .library(name: "JWWUIKit", targets: ["JWWUIKit"])
     ],
     dependencies: [ ],
     targets: [
