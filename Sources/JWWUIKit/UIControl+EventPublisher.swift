@@ -8,8 +8,10 @@ public extension UIControl {
     }
 
     struct EventPublisher: Publisher {
+        // swiftlint:disable nesting
         public typealias Output = Void
         public typealias Failure = Never
+        // swiftlint:enable nesting
 
         fileprivate var control: UIControl
         fileprivate var event: Event
@@ -36,7 +38,8 @@ public extension UIControl {
             target = nil
         }
 
-        @objc func trigger() {
+        @objc
+        func trigger() {
             // Whenever an event was triggered by the underlying
             // UIControl instance, we'll simply pass Void to our
             // target to emit that event:
